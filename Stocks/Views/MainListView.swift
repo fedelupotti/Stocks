@@ -69,7 +69,7 @@ struct MainListView: View {
                 }
                 .buttonStyle(.plain)
                 Spacer()
-            }//
+            }
         }
     }
 }
