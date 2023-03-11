@@ -7,18 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD2AE1E429B51E8D00928E6D /* Quote+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2AE1E329B51E8D00928E6D /* Quote+Extensions.swift */; };
 		DD369F2129A827CB00A96462 /* StocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD369F2029A827CB00A96462 /* StocksApp.swift */; };
-		DD369F2329A827CB00A96462 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD369F2229A827CB00A96462 /* ContentView.swift */; };
+		DD369F2329A827CB00A96462 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD369F2229A827CB00A96462 /* MainListView.swift */; };
 		DD369F2529A827CD00A96462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD369F2429A827CD00A96462 /* Assets.xcassets */; };
 		DD369F2829A827CD00A96462 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD369F2729A827CD00A96462 /* Preview Assets.xcassets */; };
+		DD37406129AD64620063CF72 /* TickerListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37406029AD64620063CF72 /* TickerListRowView.swift */; };
+		DD43503F29AC1BB400198EE9 /* TickerListRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43503E29AC1BB400198EE9 /* TickerListRowData.swift */; };
+		DD5AF1E329A8319E002A62D4 /* StocksAPI in Frameworks */ = {isa = PBXBuildFile; productRef = DD5AF1E229A8319E002A62D4 /* StocksAPI */; };
+		DDDD16C829B3E97C00A4E405 /* EmpyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD16C729B3E97C00A4E405 /* EmpyStateView.swift */; };
+		DDDD16CA29B3ED7700A4E405 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD16C929B3ED7700A4E405 /* ErrorStateView.swift */; };
+		DDDD16CC29B3F0EF00A4E405 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD16CB29B3F0EF00A4E405 /* LoadingStateView.swift */; };
+		DDDD16CF29B3F99400A4E405 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD16CE29B3F99400A4E405 /* AppViewModel.swift */; };
+		DDDD16D229B3FAC800A4E405 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD16D129B3FAC800A4E405 /* Stubs.swift */; };
+		DDDD16D429B3FE2E00A4E405 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD16D329B3FE2E00A4E405 /* QuotesViewModel.swift */; };
+		DDDD16D629B4023000A4E405 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD16D529B4023000A4E405 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD2AE1E329B51E8D00928E6D /* Quote+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quote+Extensions.swift"; sourceTree = "<group>"; };
 		DD369F1D29A827CB00A96462 /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD369F2029A827CB00A96462 /* StocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApp.swift; sourceTree = "<group>"; };
-		DD369F2229A827CB00A96462 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DD369F2229A827CB00A96462 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
 		DD369F2429A827CD00A96462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD369F2729A827CD00A96462 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DD37406029AD64620063CF72 /* TickerListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRowView.swift; sourceTree = "<group>"; };
+		DD43503E29AC1BB400198EE9 /* TickerListRowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRowData.swift; sourceTree = "<group>"; };
+		DDDD16C729B3E97C00A4E405 /* EmpyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpyStateView.swift; sourceTree = "<group>"; };
+		DDDD16C929B3ED7700A4E405 /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
+		DDDD16CB29B3F0EF00A4E405 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		DDDD16CE29B3F99400A4E405 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		DDDD16D129B3FAC800A4E405 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
+		DDDD16D329B3FE2E00A4E405 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
+		DDDD16D529B4023000A4E405 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +47,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD5AF1E329A8319E002A62D4 /* StocksAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD2AE1E129B51E2400928E6D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD2AE1E329B51E8D00928E6D /* Quote+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DD369F1429A827CB00A96462 = {
 			isa = PBXGroup;
 			children = (
@@ -52,9 +82,14 @@
 			isa = PBXGroup;
 			children = (
 				DD369F2029A827CB00A96462 /* StocksApp.swift */,
-				DD369F2229A827CB00A96462 /* ContentView.swift */,
+				DD2AE1E129B51E2400928E6D /* Extensions */,
+				DDDD16CD29B3F97B00A4E405 /* View Models */,
+				DD37405F29AD64390063CF72 /* Views */,
+				DD43503D29AC1B8300198EE9 /* Models */,
+				DDDD16D029B3FA3F00A4E405 /* Mocks & Stubs */,
 				DD369F2429A827CD00A96462 /* Assets.xcassets */,
 				DD369F2629A827CD00A96462 /* Preview Content */,
+				DDDD16D529B4023000A4E405 /* Utils.swift */,
 			);
 			path = Stocks;
 			sourceTree = "<group>";
@@ -65,6 +100,51 @@
 				DD369F2729A827CD00A96462 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DD37405F29AD64390063CF72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD369F2229A827CB00A96462 /* MainListView.swift */,
+				DD37406029AD64620063CF72 /* TickerListRowView.swift */,
+				DDDD16C629B3E96000A4E405 /* Common */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD43503D29AC1B8300198EE9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD43503E29AC1BB400198EE9 /* TickerListRowData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DDDD16C629B3E96000A4E405 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DDDD16C729B3E97C00A4E405 /* EmpyStateView.swift */,
+				DDDD16C929B3ED7700A4E405 /* ErrorStateView.swift */,
+				DDDD16CB29B3F0EF00A4E405 /* LoadingStateView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DDDD16CD29B3F97B00A4E405 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				DDDD16CE29B3F99400A4E405 /* AppViewModel.swift */,
+				DDDD16D329B3FE2E00A4E405 /* QuotesViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		DDDD16D029B3FA3F00A4E405 /* Mocks & Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				DDDD16D129B3FAC800A4E405 /* Stubs.swift */,
+			);
+			path = "Mocks & Stubs";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +163,9 @@
 			dependencies = (
 			);
 			name = Stocks;
+			packageProductDependencies = (
+				DD5AF1E229A8319E002A62D4 /* StocksAPI */,
+			);
 			productName = Stocks;
 			productReference = DD369F1D29A827CB00A96462 /* Stocks.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +194,9 @@
 				Base,
 			);
 			mainGroup = DD369F1429A827CB00A96462;
+			packageReferences = (
+				DD5AF1E129A8319E002A62D4 /* XCRemoteSwiftPackageReference "stocksAPI" */,
+			);
 			productRefGroup = DD369F1E29A827CB00A96462 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +223,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD369F2329A827CB00A96462 /* ContentView.swift in Sources */,
+				DDDD16D229B3FAC800A4E405 /* Stubs.swift in Sources */,
+				DDDD16CC29B3F0EF00A4E405 /* LoadingStateView.swift in Sources */,
+				DD369F2329A827CB00A96462 /* MainListView.swift in Sources */,
+				DDDD16D429B3FE2E00A4E405 /* QuotesViewModel.swift in Sources */,
+				DDDD16CF29B3F99400A4E405 /* AppViewModel.swift in Sources */,
+				DDDD16C829B3E97C00A4E405 /* EmpyStateView.swift in Sources */,
 				DD369F2129A827CB00A96462 /* StocksApp.swift in Sources */,
+				DDDD16D629B4023000A4E405 /* Utils.swift in Sources */,
+				DDDD16CA29B3ED7700A4E405 /* ErrorStateView.swift in Sources */,
+				DD43503F29AC1BB400198EE9 /* TickerListRowData.swift in Sources */,
+				DD2AE1E429B51E8D00928E6D /* Quote+Extensions.swift in Sources */,
+				DD37406129AD64620063CF72 /* TickerListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +435,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD5AF1E129A8319E002A62D4 /* XCRemoteSwiftPackageReference "stocksAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fedelupotti/stocksAPI.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD5AF1E229A8319E002A62D4 /* StocksAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD5AF1E129A8319E002A62D4 /* XCRemoteSwiftPackageReference "stocksAPI" */;
+			productName = StocksAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD369F1529A827CB00A96462 /* Project object */;
 }

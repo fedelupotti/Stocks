@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct StocksApp: App {
+    
+    @StateObject var appVM = AppViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MainListView()
+            }
+            .environmentObject(appVM)
         }
     }
 }
