@@ -32,6 +32,27 @@ class AppViewModel: ObservableObject {
         tickers.remove(atOffsets: offsets)
     }
     
+    func isAddedToMyTickers(_ ticker: Ticker) -> Bool {
+         tickers.contains(where: { $0.symbol == ticker.symbol } )
+    }
+    
+    func toggleTicker(_ ticker: Ticker) {
+        if isAddedToMyTickers(ticker) {
+            removeToMyTickers(ticker)
+        } else {
+            addToMyTickers(ticker)
+        }
+    }
+    
+    private func removeToMyTickers(_ ticker: Ticker) {
+        guard let index = tickers.firstIndex(where: { $0.symbol == ticker.symbol } ) else { return }
+        tickers.remove(at: index)
+    }
+    
+    private func addToMyTickers(_ ticker: Ticker) {
+        tickers.append(ticker)
+    }
+    
     func openYahooFinance() {
         let url = URL(string: "https://finance.yahoo.com")!
         guard UIApplication.shared.canOpenURL(url) else { return }

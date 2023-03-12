@@ -11,7 +11,7 @@ import SwiftUI
 import StocksAPI
 
 @MainActor
-class SearchViewModel {
+class SearchViewModel: ObservableObject {
     
     @Published var query: String = ""
     @Published var phase: FetchPhase<[Ticker]> = .initial

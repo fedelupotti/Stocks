@@ -113,8 +113,8 @@
 			children = (
 				DD369F2229A827CB00A96462 /* MainListView.swift */,
 				DD37406029AD64620063CF72 /* TickerListRowView.swift */,
-				DDDD16C629B3E96000A4E405 /* Common */,
 				DDAAB63B29BD253500AD8539 /* SearchView.swift */,
+				DDDD16C629B3E96000A4E405 /* Common */,
 			);
 			path = Views;
 			sourceTree = "<group>";
