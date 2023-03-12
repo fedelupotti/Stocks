@@ -22,5 +22,8 @@ class SearchViewModel: ObservableObject {
     
     var tickers: [Ticker] { phase.value ?? [] }
     var error: Error? { phase.error }
-    var isSearching: Bool { !trimmedQuery.isEmpty}
+    var isSearching: Bool { !trimmedQuery.isEmpty }
+    var emptyMessage: String {
+        "There are any symbol \n\"\(query)\""
+    }
 }

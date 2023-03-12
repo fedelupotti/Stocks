@@ -24,11 +24,31 @@ struct SearchView: View {
                             type: .search(
                                 isSaved: appVM.isAddedToMyTickers(ticker),
                                 onButtonTapped: {
-                                    appVM.toggleTicker(ticker)})))
+                                    appVM.toggleTicker(ticker)}))
+            )
+            .contentShape(Rectangle())
+            .onTapGesture { }
         }
         .listStyle(.plain)
+        .overlay { listSearchOverlay }
     }
+    
+    @ViewBuilder
+    private var listSearchOverlay: some View {
+        switch searchVM.phase {
+        case .failure(let error):
+            ErrorStateView(error: error.localizedDescription, retryCallback: {} )
+        case .empty:
+            EmpyStateView(text: searchVM.emptyMessage)
+        case .fetching:
+            LoadingStateView()
+        default: EmptyView()
+        }
+    }
+    
 }
+
+
 
 struct SearchView_Previews: PreviewProvider {
     
@@ -59,7 +79,7 @@ struct SearchView_Previews: PreviewProvider {
     
     @StateObject static var appVM: AppViewModel = {
         let vm = AppViewModel()
-        vm.tickers = Ticker.stubs
+        vm.tickers = Array(Ticker.stubs.prefix(upTo: 2))
         return vm
     }()
     
@@ -75,26 +95,27 @@ struct SearchView_Previews: PreviewProvider {
             NavigationStack {
                 SearchView(searchVM: stubbedSearchVM, quotesVM: QuotesVM)
             }
-            .environmentObject(appVM)
+            .searchable(text: $stubbedSearchVM.query)
             .previewDisplayName("Results")
             
             NavigationStack {
                 SearchView(searchVM: emptySearchVM, quotesVM: QuotesVM)
             }
-            .environmentObject(appVM)
+            .searchable(text: $emptySearchVM.query)
             .previewDisplayName("Empty")
             
             NavigationStack {
                 SearchView(searchVM: errorSearchVM, quotesVM: QuotesVM)
             }
-            .environmentObject(appVM)
+            .searchable(text: $errorSearchVM.query)
             .previewDisplayName("Error")
             
             NavigationStack {
                 SearchView(searchVM: loadingSearchVM, quotesVM: QuotesVM)
             }
-            .environmentObject(appVM)
+            .searchable(text: $loadingSearchVM.query)
             .previewDisplayName("Loading")
         }
+        .environmentObject(appVM)
     }
 }
