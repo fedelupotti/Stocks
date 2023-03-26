@@ -93,9 +93,9 @@ struct SearchView_Previews: PreviewProvider {
     }()
     
     @StateObject static var appVM: AppViewModel = {
-        let vm = AppViewModel()
-        vm.tickers = Array(Ticker.stubs.prefix(upTo: 2))
-        return vm
+        var mock = MockTickerRepository()
+        mock.stubbedLoad = { Array(Ticker.stubs.prefix(upTo: 2)) }
+        return AppViewModel(repository: mock)
     }()
     
     static var QuotesVM: QuotesViewModel = {

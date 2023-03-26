@@ -12,14 +12,51 @@ import StocksAPI
 @MainActor // So all properties can be updated inside the main thread
 class AppViewModel: ObservableObject {
     
-    @Published var tickers: [Ticker] = []
+    @Published var tickers: [Ticker] = [] {
+        didSet {
+            self.saveTickers()
+        }
+    }
     @Published var subtitleText: String
     var emptyTickersText = "Search & add symbols to see stock quotes"
     var titleText = "Stocks"
     let attributionText = "Powered by Yahoo! finance API"
     
-    init() {
+    let tickerListRepository: TickerListRepository
+    
+    init(repository: TickerListRepository = TickerPlistRepository()) {
+        self.tickerListRepository = repository
         self.subtitleText = subtitleDateFormatter.string(from: Date())
+        self.loadTickers()
+    }
+    
+    private func loadTickers() {
+
+        Task { [weak self] in
+            
+            guard let self else { return }
+            do {
+                self.tickers = try await self.tickerListRepository.load()
+            }
+            catch {
+                print(error.localizedDescription)
+                self.tickers = []
+            }
+        }
+    }
+    
+    private func saveTickers() {
+        
+        Task { [weak self] in
+            
+            guard let self else { return }
+            do {
+                try await self.tickerListRepository.save(self.tickers)
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     private let subtitleDateFormatter: DateFormatter = {

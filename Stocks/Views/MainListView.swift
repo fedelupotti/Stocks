@@ -88,15 +88,15 @@ struct MainListView: View {
 struct MainListView_Previews: PreviewProvider {
     
     @StateObject static var appVM: AppViewModel = {
-        let vm = AppViewModel()
-        vm.tickers = Ticker.stubs
-        return vm
+        var mock = MockTickerRepository()
+        mock.stubbedLoad = { Ticker.stubs }
+        return AppViewModel(repository: mock)
     }()
     
     @StateObject static var emptyAppVM: AppViewModel = {
-        let vm = AppViewModel()
-        vm.tickers = []
-        return vm
+        var mock = MockTickerRepository()
+        mock.stubbedLoad = { [] }
+        return AppViewModel(repository: mock)
     }()
     
     static var quotesVM: QuotesViewModel = {
