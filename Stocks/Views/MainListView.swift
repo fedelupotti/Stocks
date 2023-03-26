@@ -100,15 +100,15 @@ struct MainListView_Previews: PreviewProvider {
     }()
     
     static var quotesVM: QuotesViewModel = {
-        let vm = QuotesViewModel()
-        vm.quotesDict = Quote.stubsDict
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedFetchQuotesCallBack = { Quote.stubs }
+        return QuotesViewModel(stocksApi: mock)
     }()
     
     static var searchVM: SearchViewModel = {
-       let searchVM = SearchViewModel()
-        searchVM.phase = .success(Ticker.stubs)
-        return searchVM
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallBack = { Ticker.stubs }
+        return SearchViewModel(stocksApi: mock)
     }()
     
     

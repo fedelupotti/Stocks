@@ -67,28 +67,29 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     
     @StateObject static var stubbedSearchVM: SearchViewModel = {
-        let searchVM = SearchViewModel()
-        searchVM.phase = .success(Ticker.stubs)
-        return searchVM
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallBack = { Ticker.stubs }
+        return SearchViewModel(query: "Apple", stocksApi: mock)
     }()
     
     @StateObject static var emptySearchVM: SearchViewModel = {
-        let searchVM = SearchViewModel()
-        searchVM.query = "Moveler"
-        searchVM.phase = .empty
-        return searchVM
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallBack = { [] }
+        return SearchViewModel(query: "Moveler", stocksApi: mock)
     }()
     
     @StateObject static var errorSearchVM: SearchViewModel = {
-        let searchVM = SearchViewModel()
-        searchVM.phase = .failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:"An error has been occured"]))
-        return searchVM
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallBack = { throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:"An error has been occured"]) }
+        return SearchViewModel(query: "Apple", stocksApi: mock)
     }()
     
     @StateObject static var loadingSearchVM: SearchViewModel = {
-        let searchVM = SearchViewModel()
-        searchVM.phase = .fetching
-        return searchVM
+        var mock = MockStocksAPI()
+        mock.stubbedSearchTickersCallBack = {
+            await withCheckedContinuation { _ in }
+        }
+        return SearchViewModel(query: "Appl", stocksApi: mock)
     }()
     
     @StateObject static var appVM: AppViewModel = {
@@ -98,9 +99,9 @@ struct SearchView_Previews: PreviewProvider {
     }()
     
     static var QuotesVM: QuotesViewModel = {
-        let vm = QuotesViewModel()
-        vm.quotesDict = Quote.stubsDict
-        return vm
+        var mock = MockStocksAPI()
+        mock.stubbedFetchQuotesCallBack = { Quote.stubs }
+        return QuotesViewModel(stocksApi: mock)
     }()
     
     static var previews: some View {
