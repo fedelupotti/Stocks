@@ -23,6 +23,12 @@ struct MainListView: View {
                 attributionToolBar
             }
             .searchable(text: $searchVM.query)
+            .refreshable {
+                await quotesVM.fetchQuotes(tickers: appVM.tickers)
+            }
+            .task(id: appVM.tickers) {
+                await quotesVM.fetchQuotes(tickers: appVM.tickers)
+            }
     }
     
     private var tickerListView: some View {

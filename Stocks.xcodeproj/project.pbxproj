@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		DD2AE1E429B51E8D00928E6D /* Quote+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2AE1E329B51E8D00928E6D /* Quote+Extensions.swift */; };
+		DD35A00A29C5F28900DC0F27 /* MockStocksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD35A00929C5F28900DC0F27 /* MockStocksAPI.swift */; };
 		DD369F2129A827CB00A96462 /* StocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD369F2029A827CB00A96462 /* StocksApp.swift */; };
 		DD369F2329A827CB00A96462 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD369F2229A827CB00A96462 /* MainListView.swift */; };
 		DD369F2529A827CD00A96462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD369F2429A827CD00A96462 /* Assets.xcassets */; };
 		DD369F2829A827CD00A96462 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD369F2729A827CD00A96462 /* Preview Assets.xcassets */; };
 		DD37406129AD64620063CF72 /* TickerListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37406029AD64620063CF72 /* TickerListRowView.swift */; };
+		DD3BE05429BFE1C400D69FDD /* StocksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3BE05329BFE1C400D69FDD /* StocksApi.swift */; };
 		DD43503F29AC1BB400198EE9 /* TickerListRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43503E29AC1BB400198EE9 /* TickerListRowData.swift */; };
 		DD5AF1E329A8319E002A62D4 /* StocksAPI in Frameworks */ = {isa = PBXBuildFile; productRef = DD5AF1E229A8319E002A62D4 /* StocksAPI */; };
 		DDAAB63829BD09EB00AD8539 /* FetchPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAAB63729BD09EB00AD8539 /* FetchPhase.swift */; };
@@ -29,12 +31,14 @@
 
 /* Begin PBXFileReference section */
 		DD2AE1E329B51E8D00928E6D /* Quote+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quote+Extensions.swift"; sourceTree = "<group>"; };
+		DD35A00929C5F28900DC0F27 /* MockStocksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStocksAPI.swift; sourceTree = "<group>"; };
 		DD369F1D29A827CB00A96462 /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD369F2029A827CB00A96462 /* StocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApp.swift; sourceTree = "<group>"; };
 		DD369F2229A827CB00A96462 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
 		DD369F2429A827CD00A96462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD369F2729A827CD00A96462 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DD37406029AD64620063CF72 /* TickerListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRowView.swift; sourceTree = "<group>"; };
+		DD3BE05329BFE1C400D69FDD /* StocksApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApi.swift; sourceTree = "<group>"; };
 		DD43503E29AC1BB400198EE9 /* TickerListRowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRowData.swift; sourceTree = "<group>"; };
 		DDAAB63729BD09EB00AD8539 /* FetchPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhase.swift; sourceTree = "<group>"; };
 		DDAAB63929BD1F5D00AD8539 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 		DDDD16D129B3FAC800A4E405 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
 		DDDD16D329B3FE2E00A4E405 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 		DDDD16D529B4023000A4E405 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		DDE78B5029C7A40600A898E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +92,9 @@
 		DD369F1F29A827CB00A96462 /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
+				DDE78B5029C7A40600A898E1 /* Info.plist */,
 				DD369F2029A827CB00A96462 /* StocksApp.swift */,
+				DD3BE05229BFE19500D69FDD /* Services */,
 				DD2AE1E129B51E2400928E6D /* Extensions */,
 				DDDD16CD29B3F97B00A4E405 /* View Models */,
 				DD37405F29AD64390063CF72 /* Views */,
@@ -117,6 +124,14 @@
 				DDDD16C629B3E96000A4E405 /* Common */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DD3BE05229BFE19500D69FDD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DD3BE05329BFE1C400D69FDD /* StocksApi.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		DD43503D29AC1B8300198EE9 /* Models */ = {
@@ -152,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				DDDD16D129B3FAC800A4E405 /* Stubs.swift */,
+				DD35A00929C5F28900DC0F27 /* MockStocksAPI.swift */,
 			);
 			path = "Mocks & Stubs";
 			sourceTree = "<group>";
@@ -243,6 +259,8 @@
 				DDAAB63A29BD1F5D00AD8539 /* SearchViewModel.swift in Sources */,
 				DDDD16D629B4023000A4E405 /* Utils.swift in Sources */,
 				DDAAB63C29BD253500AD8539 /* SearchView.swift in Sources */,
+				DD3BE05429BFE1C400D69FDD /* StocksApi.swift in Sources */,
+				DD35A00A29C5F28900DC0F27 /* MockStocksAPI.swift in Sources */,
 				DDDD16CA29B3ED7700A4E405 /* ErrorStateView.swift in Sources */,
 				DD43503F29AC1BB400198EE9 /* TickerListRowData.swift in Sources */,
 				DD2AE1E429B51E8D00928E6D /* Quote+Extensions.swift in Sources */,
@@ -303,6 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -357,6 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -378,7 +398,8 @@
 				DEVELOPMENT_TEAM = C4XSSD23UD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Stocks/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -407,7 +428,8 @@
 				DEVELOPMENT_TEAM = C4XSSD23UD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Stocks/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

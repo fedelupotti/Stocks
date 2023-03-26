@@ -8,6 +8,7 @@
 import SwiftUI
 import StocksAPI
 
+@MainActor
 struct SearchView: View {
     
     @EnvironmentObject var appVM: AppViewModel
@@ -24,12 +25,21 @@ struct SearchView: View {
                             type: .search(
                                 isSaved: appVM.isAddedToMyTickers(ticker),
                                 onButtonTapped: {
-                                    appVM.toggleTicker(ticker)}))
+                                    Task { @MainActor in
+                                        appVM.toggleTicker(ticker)
+                                    }                     
+                                }
+                            )
+                           )
             )
-            .contentShape(Rectangle())
-            .onTapGesture { }
         }
         .listStyle(.plain)
+        .refreshable {
+            await quotesVM.fetchQuotes(tickers: searchVM.tickers)
+        }
+        .task(id: searchVM.tickers) {
+            await quotesVM.fetchQuotes(tickers: searchVM.tickers)
+        }
         .overlay { listSearchOverlay }
     }
     
@@ -37,7 +47,11 @@ struct SearchView: View {
     private var listSearchOverlay: some View {
         switch searchVM.phase {
         case .failure(let error):
-            ErrorStateView(error: error.localizedDescription, retryCallback: {} )
+            ErrorStateView(error: error.localizedDescription, retryCallback: {
+                Task {
+                    await searchVM.searchTickers()
+                }
+            } )
         case .empty:
             EmpyStateView(text: searchVM.emptyMessage)
         case .fetching:
